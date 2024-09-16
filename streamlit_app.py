@@ -30,7 +30,7 @@ pc = Pinecone(api_key=PINECONE_API_KEY, environment=PINECONE_ENVIRONMENT)
 index = pc.Index(PINECONE_INDEX)
 
 # Pineconeベクトルストアの初期化
-vectorstore = PineconeVectorStore(index, embeddings.embed_query, "text")
+vectorstore = PineconeVectorStore(index, embeddings, "text")
 
 # ChatGPTモデルの初期化
 llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo", openai_api_key=OPENAI_API_KEY)
