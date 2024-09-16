@@ -4,10 +4,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from pinecone import Pinecone
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.chat_models import ChatOpenAI
+from langchain_community.embeddings import OpenAIEmbeddings
+from langchain_openai import ChatOpenAI
 from langchain.chains import RetrievalQA
-from langchain.vectorstores import PineconeVectorStore
+from langchain_pinecone import PineconeVectorStore
 
 # Streamlit secret または環境変数から API キーとインデックス名を取得
 OPENAI_API_KEY = st.secrets.get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
